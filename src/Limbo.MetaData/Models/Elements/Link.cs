@@ -79,18 +79,28 @@ namespace Limbo.MetaData.Models.Elements {
         public Link() { }
 
         /// <summary>
-        /// Initializes a new <c>link</c> element based on the specified <paramref name="href"/>, <paramref name="rel"/> and <paramref name="type"/>.
+        /// Initializes a new <c>link</c> element based on the specified <paramref name="rel"/> and <paramref name="href"/> parameters.
         /// </summary>
+        /// <param name="rel">The value of the <c>rel</c> attribute.</param>
+        /// <param name="href">The value of the <c>href</c> attribute.</param>
+        public Link(string rel, string href) {
+            Rel = rel;
+            Href = href;
+        }
+
+        /// <summary>
+        /// Initializes a new <c>link</c> element based on the specified parameters.
+        /// </summary>
+        /// <param name="rel">The value of the <c>rel</c> attribute.</param>
+        /// <param name="href">The value of the <c>href</c> attribute.</param>
         /// <param name="hid">A unique Vue Meta identifier.</param>
         /// <param name="id">The value of the <c>id</c> attribute.</param>
-        /// <param name="href">The value of the <c>href</c> attribute.</param>
-        /// <param name="rel">The value of the <c>rel</c> attribute.</param>
         /// <param name="type">The value of the <c>type</c> attribute.</param>
-        public Link(string hid = null, string id = null, string href = null, string rel = null, string type = null) {
+        public Link(string rel = null, string href = null, string hid = null, string id = null, string type = null) {
+            Rel = rel;
+            Href = href;
             Hid = hid;
             Id = id;
-            Href = href;
-            Rel = rel;
             Type = type;
         }
 

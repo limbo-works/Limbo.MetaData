@@ -82,11 +82,11 @@ namespace Limbo.MetaData.Models.Elements {
         /// <summary>
         /// Initializes a new <c>base</c> element.
         /// </summary>
-        /// <param name="hid">A unique Vue Meta identifier.</param>
-        /// <param name="id">The value for the <c>id</c> attribute of the element.</param>
         /// <param name="href">The value for the <c>value</c> attribute of the element.</param>
         /// <param name="target">The value for the <c>href</c> attribute of the element.</param>
-        public Base(string hid = null, string id = null, string href = null, string target = null) {
+        /// <param name="hid">A unique Vue Meta identifier.</param>
+        /// <param name="id">The value for the <c>id</c> attribute of the element.</param>
+        public Base(string href = null, string target = null, string hid = null, string id = null) {
             Hid = hid;
             Id = id;
             Href = href;

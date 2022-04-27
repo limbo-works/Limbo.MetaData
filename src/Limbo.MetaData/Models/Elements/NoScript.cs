@@ -23,12 +23,12 @@ namespace Limbo.MetaData.Models.Elements {
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance with default options.
+        /// Initializes a new <c>&lt;noscript%gt;</c> element with default options.
         /// </summary>
         public NoScript() { }
 
         /// <summary>
-        /// Initializes a new instance based on the specified <paramref name="innerHtml"/>.
+        /// Initializes a new <c>&lt;noscript%gt;</c> element based on the specified <paramref name="innerHtml"/>.
         /// </summary>
         /// <param name="innerHtml">The inner HTML of the element.</param>
         public NoScript(string innerHtml) {
@@ -38,13 +38,13 @@ namespace Limbo.MetaData.Models.Elements {
         /// <summary>
         /// Initializes a new <c>&lt;noscript%gt;</c> element based on the specified parameters.
         /// </summary>
+        /// <param name="innerHtml">The inner HTML of the element.</param>
         /// <param name="hid">A unique Vue Meta identifier.</param>
         /// <param name="id">The value of the <c>id</c> attribute.</param>
-        /// <param name="innerHtml">The inner HTML of the element.</param>
-        public NoScript(string hid = null, string id = null, string innerHtml = null) {
+        public NoScript(string innerHtml = null, string hid = null, string id = null) {
+            InnerHtml = innerHtml;
             Hid = hid;
             Id = id;
-            InnerHtml = innerHtml;
         }
 
         #endregion

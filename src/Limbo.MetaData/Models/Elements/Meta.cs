@@ -89,14 +89,14 @@ namespace Limbo.MetaData.Models.Elements {
         /// <param name="httpEquiv">A pragma directive</param>
         /// <param name="property">The name of the name-value pair.</param>
         /// <param name="content">The content of the name-value pair.</param>
-        public Meta(string hid = null, string id = null, string chartset = null, string name = null, string httpEquiv = null, string property = null, string content = null) {
+        public Meta(string name = null, string content = null, string hid = null, string id = null, string chartset = null, string httpEquiv = null, string property = null) {
+            Name = name;
+            Content = content;
             Hid = hid;
             Id = id;
             Charset = chartset;
-            Name = name;
             HttpEquiv = httpEquiv;
             Property = property;
-            Content = content;
         }
 
         #endregion

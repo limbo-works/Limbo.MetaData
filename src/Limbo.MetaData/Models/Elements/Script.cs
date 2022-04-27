@@ -109,13 +109,13 @@ namespace Limbo.MetaData.Models.Elements {
         /// <param name="defer">Whether the script is meant to be executed after the document has been parsed, but before firing the <c>DOMContentLoaded</c> event.</param>
         /// <param name="async">Whether the browser should, if possible, load the script asynchronously and then execute it as soon as it’s downloaded.</param>
         /// <param name="json">Gets or sets the JSON of the <c>script</c> element. This property allows you to render JSON content within a script tag, while still sanitizing the keys and values. For example this can be used to render JSON-LD.</param>
-        public Script(string hid = null, string id = null, string title = null, string source = null,
+        public Script(string source = null, string hid = null, string id = null, string title = null,
             string type = null, string innerHtml = null, bool appendToBody = false, bool defer = false,
             bool async = false, JToken json = null) {
+            Source = source;
             Hid = hid;
             Id = id;
             Title = title;
-            Source = source;
             Type = type ?? "text/javascript";
             InnerHtml = innerHtml;
             AppendToBody = appendToBody;
