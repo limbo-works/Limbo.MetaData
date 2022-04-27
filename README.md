@@ -4,7 +4,7 @@ Package for generating HTML meta tags from a strongly typed model.
 
 ## Installation
 
-Install for Umbraco 9 via [NuGet](https://www.nuget.org/packages/Limbo.MetaData/1.0.0-alpha001):
+Install via [NuGet](https://www.nuget.org/packages/Limbo.MetaData/1.0.0-alpha001):
 
 ```
 dotnet add package Limbo.MetaData --version 1.0.0-alpha001
@@ -12,4 +12,4 @@ dotnet add package Limbo.MetaData --version 1.0.0-alpha001
 
 ## Documentation
 
-- [Go to **Documentation**](./documentation/)
+- [See the **Documentation**](./documentation/)
