@@ -87,3 +87,46 @@ var metaData = new MetData()
 var metaData = new MetData()
     .AddMeta(charset: "utf-8");
 ```
+
+## Script
+
+With `source` (aka `src` attribute in the HTML):
+
+```csharp
+var metaData = new MetData()
+    .AddScript("not-jquery.js")
+    .AddScript(source: "app.js");
+```
+
+With inner HTML:
+
+```csharp
+var metaData = new MetData()
+    .AddScript(innerHtml: "alert(\"hi\");");
+```
+
+### Properties / Parameters
+
+- **source:** The value of the `src` attribute.
+- **id:** The value of the `id` attribute.
+- **title:** The value of the `title` attribute.
+- **type:** The value of the `type` attribute.
+- **innerHtml:** The inner HTML of the element.
+- **appendToBody:** Whether the new `<script>` element should be appended to the `<body>` element.
+- **defer:** Whether the script is meant to be executed after the document has been parsed, but before firing the `DOMContentLoaded` event.
+- **async:** Whether the browser should, if possible, load the script asynchronously and then execute it as soon as it’s downloaded.
+- **json:** The JSON of the `<script>` element. This property allows you to render JSON content within a script tag, while still sanitizing the keys and values. For example this can be used to render JSON-LD.
+- **hid:** A unique Vue Meta identifier.
+
+## NoScript
+
+```csharp
+var metaData = new MetData()
+    .AddNoScript(innerHtml: "This website requires JavaScript.");
+```
+
+### Properties / Parameters
+
+- **id:** The value of the `id` attribute.
+- **innerHtml:** The inner HTML of the element.
+- **hid:** A unique Vue Meta identifier.
