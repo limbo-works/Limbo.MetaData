@@ -1,6 +1,6 @@
 # Open Graph
 
-The Open Graph of a given page is represented by the `OpenGraphProperties` class. You can se the `OpenGraph` property on `MetaData` directly:
+The Open Graph information of a given page is represented by the `OpenGraphProperties` class. You can se the `OpenGraph` property on `MetaData` directly:
 
 ```csharp
 MetaData metaData = new MetaData {
