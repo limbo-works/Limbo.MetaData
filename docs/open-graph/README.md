@@ -26,7 +26,7 @@ MetaData metaData = new MetaData()
         og.SiteName = site.Name;
         og.Title = page.Name;
         og.Description = page.Teaser;
-        if (image != null) og.AppendImage(image.Media.GetCropUrl(width: 1200, height: 630, urlMode: UrlMode.Absolute), 1200, 630);
+        if (image != null) og.AppendImage(image.Url, 1200, 630);
     });
 ```
 
