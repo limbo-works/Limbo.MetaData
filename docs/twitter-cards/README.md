@@ -13,3 +13,17 @@ MetaData metaData = new MetaData {
     }
 };
 ```
+
+Setting a `TwitterSummaryLargeImageCard` has the same properties, but results in a larger image when shared on Twitter:
+
+```csharp
+MetaData metaData = new MetaData {
+    Twitter = new TwitterSummaryLargeImageCard {
+        Creator = "@abjerner",
+        Site = site.Name,
+        Title = page.Name,
+        Description = page.Teaser,
+        Image = image?.Url
+    }
+};
+```

@@ -1,14 +1,14 @@
 # Open Graph
 
-The Open Graph of a given page is represented by the `OpenGraphProperties` class:
+The Open Graph of a given page is represented by the `OpenGraphProperties` class. You can se the `OpenGraph` property on `MetaData` directly:
 
 ```csharp
 MetaData metaData = new MetaData {
     OpenGraph = new OpengraphProperties {
         CanonicalUrl = canonicalUrl,
-        SiteName = root.Name,
-        Title = Model.Name,
-        Description = teaser
+        SiteName = site.Name,
+        Title = page.Name,
+        Description = page.Teaser
     }
 };
 
@@ -17,13 +17,25 @@ if (image != null) {
 }
 ```
 
+Or set it via an extension method:
+
 ```csharp
 MetaData metaData = new MetaData()
     .SetOpenGraph(og => {
         og.Url = canonicalUrl;
-        og.SiteName = root.Name;
-        og.Title = Model.Name;
-        og.Description = teaser;
+        og.SiteName = site.Name;
+        og.Title = page.Name;
+        og.Description = page.Teaser;
         if (image != null) og.AppendImage(image.Media.GetCropUrl(width: 1200, height: 630, urlMode: UrlMode.Absolute), 1200, 630);
+    });
+```
+
+```csharp
+MetaData metaData = new MetaData()
+    .SetOpenGraph(new OpengraphProperties {
+        CanonicalUrl = canonicalUrl,
+        SiteName = site.Name,
+        Title = page.Name,
+        Description = page.Teaser
     });
 ```
