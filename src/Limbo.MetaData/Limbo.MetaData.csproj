@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<LangVersion>9.0</LangVersion>
+		<TargetFramework>netstandard2.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<VersionPrefix>1.0.0-alpha001</VersionPrefix>
+		<VersionSuffix Condition="'$(Configuration)'=='Debug'">build$([System.DateTime]::UtcNow.ToString(`yyyyMMddHHmm`))</VersionSuffix>
+		<Company>Limbo</Company>
+		<Authors>Anders Bjerner</Authors>
+		<Copyright>Copyright © 2022</Copyright>
+		<Description>Package for generating HTML meta tags from a strongly typed model.</Description>
+	</PropertyGroup>
+
+	<!-- Information for the NuGet package -->
+	<PropertyGroup>
+		<PackageId>Limbo.MetaData</PackageId>
+		<PackageTags>Skybrud, Limbo, Meta</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/limbo-works/Limbo.MetaData</PackageProjectUrl>
+		<PackageIcon>Limbo.png</PackageIcon>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/limbo-works/Limbo.MetaData</RepositoryUrl>
+	</PropertyGroup>
+
+	<!-- Include NuGet dependencies -->
+	<ItemGroup>
+		<PackageReference Include="Skybrud.Essentials" Version="1.1.39" />
+	</ItemGroup>
+
+	<!-- Include package icon for NuGet -->
+	<ItemGroup>
+		<Content Include="../build/Limbo.png" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<!-- Generate XML documentation -->
+	<PropertyGroup>
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+	</PropertyGroup>
+
+</Project>
