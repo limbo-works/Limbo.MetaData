@@ -132,6 +132,38 @@ namespace Limbo.MetaData.Models {
             return metaData;
         }
 
+        /// <summary>
+        /// Sets the Twitter card of <paramref name="metaData"/> to a new instance of
+        /// <see cref="TwitterSummaryCard"/> and invokes the specified <paramref name="action"/> for updating the card.
+        /// </summary>
+        /// <typeparam name="TMeta">The type of the <paramref name="metaData"/> instance.</typeparam>
+        /// <param name="metaData">The meta data instance.</param>
+        /// <param name="action">The action used for updating the card.</param>
+        /// <returns><paramref name="metaData"/> - useful for method chaining.</returns>
+        public static TMeta SetTwitterSummaryCard<TMeta>(this TMeta metaData, Action<TwitterSummaryCard> action) where TMeta : MetaData {
+            if (metaData == null || action == null) return metaData;
+            var card = new TwitterSummaryCard();
+            action(card);
+            metaData.TwitterCard = card;
+            return metaData;
+        }
+
+        /// <summary>
+        /// Sets the Twitter card of <paramref name="metaData"/> to a new instance of
+        /// <see cref="TwitterSummaryCard"/> and invokes the specified <paramref name="action"/> for updating the card.
+        /// </summary>
+        /// <typeparam name="TMeta">The type of the <paramref name="metaData"/> instance.</typeparam>
+        /// <param name="metaData">The meta data instance.</param>
+        /// <param name="action">The action used for updating the card.</param>
+        /// <returns><paramref name="metaData"/> - useful for method chaining.</returns>
+        public static TMeta SetTwitterSummaryLargeImageCard<TMeta>(this TMeta metaData, Action<TwitterSummaryLargeImageCard> action) where TMeta : MetaData {
+            if (metaData == null || action == null) return metaData;
+            var card = new TwitterSummaryLargeImageCard();
+            action(card);
+            metaData.TwitterCard = card;
+            return metaData;
+        }
+
     }
 
 }
