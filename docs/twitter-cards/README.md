@@ -27,3 +27,29 @@ MetaData metaData = new MetaData {
     }
 };
 ```
+
+The package also features a number of extension methods for setting the Twitter Card - eg. to set a new `TwitterSummaryCard`:
+
+```csharp
+MetaData metaData = new MetaData()
+    .SetTwitterCard((TwitterSummaryCard tw) => {
+        tw.Creator = "@abjerner";
+        tw.Site = site.Name;
+        tw.Title = page.Name;
+        tw.Description = page.Teaser;
+        tw.Image = image?.Url;
+    });
+```
+
+or to set a new `TwitterSummaryLargeImageCard:
+
+```csharp
+MetaData metaData = new MetaData()
+    .SetTwitterCard((TwitterSummaryLargeImageCard tw) => {
+        tw.Creator = "@abjerner";
+        tw.Site = site.Name;
+        tw.Title = page.Name;
+        tw.Description = page.Teaser;
+        tw.Image = image?.Url;
+    });
+```
