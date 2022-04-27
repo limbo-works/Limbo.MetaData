@@ -41,7 +41,7 @@ MetaData metaData = new MetaData()
     });
 ```
 
-or to set a new `TwitterSummaryLargeImageCard:
+or to set a new `TwitterSummaryLargeImageCard`:
 
 ```csharp
 MetaData metaData = new MetaData()
