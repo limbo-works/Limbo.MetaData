@@ -31,6 +31,12 @@ VueMetaData metaData = new VueMetaData(CultureInfo.CurrentCulture);
 
 `VueMetaData` instances have a `HtmlAttributes` property, which is of the type `HtmlAttributeList`. This class then has a `Language` property, which corresponds to the `lang` attribute on the page's `<html>` element. Specifying a culture for the constructor will automatically set the `Language` property to the name of the culture - eg. `en-US` or `da-DK`.
 
+## Elements
+
+- [Read more about **Elements**](./elements/)
+
+
+
 ## Special Elements
 
 The `MetaData` class handles a number of different `<link>` and `<meta>` elements, meaning that these won't be part of the `MetaData.Links` or `MetaData.Meta` collections.
@@ -94,8 +100,8 @@ MetaData meta = new MetaData()
 
 ### Open Graph
 
-- [Read more about Open Graph](./open-graph/)
+- [Read more about **Open Graph**](./open-graph/)
 
 ### Twitter Cards
 
-- [Read more about Twitter Cards](./twitter-cards/)
+- [Read more about **Twitter Cards**](./twitter-cards/)
