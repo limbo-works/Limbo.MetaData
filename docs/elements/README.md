@@ -34,7 +34,7 @@ metaData.AddLink(rel: "alternate", type: "application/rss+xml", href: "http://ww
 
 Changing the order of the parameters in C# does not affect the order of the attributes when converted to HTML.
 
-The `<link>` element supports the following properties/parameters:
+### Properties / Parameters
 
 - **rel:** The value of the `rel` attribute.
 - **href:** The value of the `href` attribute.
@@ -87,6 +87,16 @@ var metaData = new MetData()
 var metaData = new MetData()
     .AddMeta(charset: "utf-8");
 ```
+
+### Properties / Parameters
+
+- **name:** The value of the `name` attribute.
+- **content:** The value of the `content` attribute.
+- **id:** The value of the `id` attribute.
+- **charset:** The value of the `chartset` attribute.
+- **httpEquiv:** The value of the `http-equiv` attribute.
+- **property:** The value of the `property` attribute.
+- **hid:** A unique Vue Meta identifier.
 
 ## Script
 
