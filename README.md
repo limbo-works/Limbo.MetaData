@@ -12,4 +12,4 @@ dotnet add package Limbo.MetaData --version 1.0.0-alpha001
 
 ## Documentation
 
-- [See the **Documentation**](./documentation/)
+- [See the **Documentation**](./docs/)
