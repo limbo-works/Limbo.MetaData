@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 namespace Limbo.MetaData.Models;
 
 /// <summary>
-/// Class representing a meta data model matching the format of <strong>Vue Meta</strong>.
+/// Class representing a meta-data model matching the format of <strong>Vue Meta</strong>.
 /// </summary>
 /// <see>
 ///     <cref>https://vue-meta.nuxtjs.org/</cref>
@@ -52,8 +52,8 @@ public class VueMetaData : MetaData {
     /// <summary>
     /// Initializes a new instance based on the specified <paramref name="culture"/>.
     /// </summary>
-    /// <param name="culture">The culture of the page the meta data represents.</param>
-    public VueMetaData(CultureInfo culture) {
+    /// <param name="culture">The culture of the page the meta-data represents.</param>
+    public VueMetaData(CultureInfo? culture) {
 
         HtmlAttributes = new HtmlAttributeList();
         HeadAttributes = new AttributeList();
@@ -62,7 +62,7 @@ public class VueMetaData : MetaData {
         // Set the "lang" attribute of the "html" element
         if (culture != null) HtmlAttributes.Language = culture.ToString();
 
-        DangerouslyDisableSanitizers = new List<string>();
+        DangerouslyDisableSanitizers = [];
 
     }
 
@@ -71,7 +71,7 @@ public class VueMetaData : MetaData {
     #region Member methods
 
     /// <summary>
-    /// Returns a <see cref="JObject"/> representing the meta data.
+    /// Returns a <see cref="JObject"/> representing the meta-data.
     /// </summary>
     public virtual JObject ToVueMetaJson() {
 

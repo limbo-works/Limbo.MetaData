@@ -16,22 +16,22 @@ public class OpenGraphProperties {
     /// <summary>
     /// Gets the Open Graph title.
     /// </summary>
-    public string Title { get; set; }
+    public string? Title { get; set; }
 
     /// <summary>
     /// Gets the Open Graph description.
     /// </summary>
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     /// <summary>
     /// Gets the Open Graph site name.
     /// </summary>
-    public string SiteName { get; set; }
+    public string? SiteName { get; set; }
 
     /// <summary>
     /// Gets the Open Graph URL.
     /// </summary>
-    public string Url { get; set; }
+    public string? Url { get; set; }
 
     /// <summary>
     /// Gets a collection of Open Graph images.
@@ -46,7 +46,7 @@ public class OpenGraphProperties {
     /// Initializes a new instance with default options.
     /// </summary>
     public OpenGraphProperties() {
-        Images = new List<OpenGraphImage>();
+        Images = [];
     }
 
     #endregion
@@ -78,7 +78,7 @@ public class OpenGraphProperties {
     /// </summary>
     /// <param name="urls">The URLs of the images to append.</param>
     public void AppendImages(params string[] urls) {
-        if (urls == null || urls.Length == 0) return;
+        if (urls.Length == 0) return;
         Images.AddRange(urls.Select(imageUrl => new OpenGraphImage(imageUrl)));
     }
 
@@ -88,8 +88,8 @@ public class OpenGraphProperties {
     /// <returns>An instance of <see cref="IReadOnlyList{Meta}"/>.</returns>
     public IReadOnlyList<Meta> GetMetaTags() {
 
-        List<Meta> temp = new ();
-            
+        List<Meta> temp = [];
+
         if (Title.HasValue()) temp.Add(property: "og:title", content: Title, autoHid: true);
         if (Description.HasValue()) temp.Add(property: "og:description", content: Description, autoHid: true);
         if (SiteName.HasValue()) temp.Add(property: "og:site_name", content: SiteName, autoHid: true);

@@ -20,7 +20,7 @@ public class Base : Element {
     ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base#attr-href</cref>
     /// </see>
     [JsonProperty("href", NullValueHandling = NullValueHandling.Ignore)]
-    public string Href { get; set; }
+    public string? Href { get; set; }
 
     /// <summary>
     /// Gets or sets a keyword or author-defined name of the default browsing context to display the result when
@@ -50,7 +50,7 @@ public class Base : Element {
     ///     <cref>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base#attr-target</cref>
     /// </see>
     [JsonProperty("target", NullValueHandling = NullValueHandling.Ignore)]
-    public string Target { get; set; }
+    public string? Target { get; set; }
 
     #endregion
 
@@ -86,7 +86,7 @@ public class Base : Element {
     /// <param name="target">The value for the <c>href</c> attribute of the element.</param>
     /// <param name="hid">A unique Vue Meta identifier.</param>
     /// <param name="id">The value for the <c>id</c> attribute of the element.</param>
-    public Base(string href = null, string target = null, string hid = null, string id = null) {
+    public Base(string? href = null, string? target = null, string? hid = null, string? id = null) {
         Hid = hid;
         Id = id;
         Href = href;

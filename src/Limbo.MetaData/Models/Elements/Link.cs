@@ -18,7 +18,7 @@ public class Link : Element {
     /// <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">link types values</a>.
     /// </summary>
     [JsonProperty("rel", NullValueHandling = NullValueHandling.Ignore)]
-    public string Rel { get; set; }
+    public string? Rel { get; set; }
 
     /// <summary>
     /// This attribute is used to define the type of the content linked to. The value of the attribute should be a
@@ -29,13 +29,13 @@ public class Link : Element {
     /// downloads file types that it supports.
     /// </summary>
     [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore)]
-    public string Type { get; set; }
+    public string? Type { get; set; }
 
     /// <summary>
     /// This attribute specifies the URL of the linked resource. A URL can be absolute or relative.
     /// </summary>
     [JsonProperty("href", NullValueHandling = NullValueHandling.Ignore)]
-    public string Href { get; set; }
+    public string? Href { get; set; }
 
     /// <summary>
     /// This attribute specifies the media that the linked resource applies to. Its value must be a media type / media query.
@@ -43,13 +43,13 @@ public class Link : Element {
     /// one for the device it runs on.
     /// </summary>
     [JsonProperty("media", NullValueHandling = NullValueHandling.Ignore)]
-    public string Media { get; set; }
+    public string? Media { get; set; }
 
     /// <summary>
     /// This attribute defines the sizes of the icons for visual media contained in the resource. It must be
     /// present only if the rel contains a value of icon or a non-standard type such as Apple's
     /// <c>apple-touch-icon</c>. It may have the following values:
-    /// 
+    ///
     /// <ul>
     ///     <li>
     ///         any, meaning that the icon can be scaled to any size as it is in a vector format, like <c>image/svg+xml</c>.
@@ -61,7 +61,7 @@ public class Link : Element {
     /// </ul>
     /// </summary>
     [JsonProperty("sizes", NullValueHandling = NullValueHandling.Ignore)]
-    public string Sizes { get; set; }
+    public string? Sizes { get; set; }
 
     /// <summary>
     /// Gets whether this <c>link</c> element is valid.
@@ -96,7 +96,7 @@ public class Link : Element {
     /// <param name="hid">A unique Vue Meta identifier.</param>
     /// <param name="id">The value of the <c>id</c> attribute.</param>
     /// <param name="type">The value of the <c>type</c> attribute.</param>
-    public Link(string rel = null, string href = null, string hid = null, string id = null, string type = null) {
+    public Link(string? rel = null, string? href = null, string? hid = null, string? id = null, string? type = null) {
         Rel = rel;
         Href = href;
         Hid = hid;

@@ -22,9 +22,9 @@ public class AttributeList : IEnumerable<KeyValuePair<string, string>> {
     /// Gets or sets the value of the attribute with the specified <paramref name="name"/>.
     /// </summary>
     /// <param name="name">The name of the attribute.</param>
-    public string this[string name] {
+    public string? this[string name] {
         get => _attributes.TryGetValue(name, out string value) ? value : null;
-        set => _attributes[name] = value;
+        set => Set(name, value);
     }
 
     /// <summary>
@@ -55,6 +55,30 @@ public class AttributeList : IEnumerable<KeyValuePair<string, string>> {
     public void Add(string name, string value) {
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentNullException(nameof(name));
         _attributes[name] = value;
+    }
+
+    /// <summary>
+    /// Returns the value of the attribute with the specified <paramref name="name"/>, or <see langword="null"/> if the attribute does not exist.
+    /// </summary>
+    /// <param name="name">The name of the attribute.</param>
+    /// <returns>The value of the attribute of found; otherwise, <see langword="null"/>.</returns>
+    public string? Get(string name) {
+        return TryGetValue(name, out string result) ? result : null;
+    }
+
+    /// <summary>
+    /// Sets the value of the attribute with the specified <paramref name="name"/>. If an attribute with the same name
+    /// already exists, the existing attribute will be overwritten. If <paramref name="value"/> is
+    /// <see langword="null"/>, the attribute will be removed from the list.
+    /// </summary>
+    /// <param name="name">The name of the attribute.</param>
+    /// <param name="value">The value of the attribute.</param>
+    public void Set(string name, string? value) {
+        if (value is null) {
+            _attributes.Remove(name);
+        } else {
+            _attributes[name] = value;
+        }
     }
 
     /// <summary>

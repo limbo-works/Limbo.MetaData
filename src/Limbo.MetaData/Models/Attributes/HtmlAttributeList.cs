@@ -8,11 +8,11 @@ public class HtmlAttributeList : AttributeList {
     #region Properties
 
     /// <summary>
-    /// Gets or sets the the value of the <c>lang</c> attribute.
+    /// Gets or sets the value of the <c>lang</c> attribute.
     /// </summary>
-    public string Language {
-        get => TryGetValue("lang", out string value) ? value : null;
-        set => Add("lang", value);
+    public string? Language {
+        get => Get("lang");
+        set => Set("lang", value);
     }
 
     #endregion

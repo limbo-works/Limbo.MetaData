@@ -14,31 +14,31 @@ public class Script : Element {
     #region Properties
 
     /// <summary>
-    /// Gets or sets the <c>title</c> attribtue of the script element.
-    /// 
+    /// Gets or sets the <c>title</c> attribute of the script element.
+    ///
     /// A title attribute is typically not used for <c>script</c> elements, but some integrations use it to pass
     /// on the title to a UI component.
     /// </summary>
     [JsonProperty("title", NullValueHandling = NullValueHandling.Ignore)]
-    public string Title { get; set; }
+    public string? Title { get; set; }
 
     /// <summary>
     /// Gets or sets the source (<c>src</c> attribute) of the script element.
     /// </summary>
     [JsonProperty("src", NullValueHandling = NullValueHandling.Ignore)]
-    public string Source { get; set; }
+    public string? Source { get; set; }
 
     /// <summary>
     /// Gets or sets the <c>type</c> attribute of the script element.
     /// </summary>
     [JsonProperty("type")]
-    public string Type { get; set; }
+    public string? Type { get; set; }
 
     /// <summary>
     /// Gets or sets the inner HTML of the script element.
     /// </summary>
     [JsonProperty("innerHTML", NullValueHandling = NullValueHandling.Ignore)]
-    public string InnerHtml { get; set; }
+    public string? InnerHtml { get; set; }
 
     /// <summary>
     /// Gets or sets whether the script element should be appended to the <c>&lt;body&gt;</c> element.
@@ -74,7 +74,7 @@ public class Script : Element {
     /// a script tag, while still sanitizing the keys and values. For example this can be used to render JSON-LD.
     /// </summary>
     [JsonProperty("json", NullValueHandling = NullValueHandling.Ignore)]
-    public JToken Json { get; set; }
+    public JToken? Json { get; set; }
 
     #endregion
 
@@ -109,9 +109,9 @@ public class Script : Element {
     /// <param name="defer">Whether the script is meant to be executed after the document has been parsed, but before firing the <c>DOMContentLoaded</c> event.</param>
     /// <param name="async">Whether the browser should, if possible, load the script asynchronously and then execute it as soon as it’s downloaded.</param>
     /// <param name="json">Gets or sets the JSON of the <c>script</c> element. This property allows you to render JSON content within a script tag, while still sanitizing the keys and values. For example this can be used to render JSON-LD.</param>
-    public Script(string source = null, string hid = null, string id = null, string title = null,
-        string type = null, string innerHtml = null, bool appendToBody = false, bool defer = false,
-        bool async = false, JToken json = null) {
+    public Script(string? source = null, string? hid = null, string? id = null, string? title = null,
+        string? type = null, string? innerHtml = null, bool appendToBody = false, bool defer = false,
+        bool async = false, JToken? json = null) {
         Source = source;
         Hid = hid;
         Id = id;

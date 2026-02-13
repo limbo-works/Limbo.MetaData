@@ -16,7 +16,7 @@ public class NoScript : Element {
     /// Gets or sets the inner HTML of the <c>&lt;noscript%gt;</c> element.
     /// </summary>
     [JsonProperty("innerHTML", NullValueHandling = NullValueHandling.Ignore)]
-    public string InnerHtml { get; set; }
+    public string? InnerHtml { get; set; }
 
     #endregion
 
@@ -41,7 +41,7 @@ public class NoScript : Element {
     /// <param name="innerHtml">The inner HTML of the element.</param>
     /// <param name="hid">A unique Vue Meta identifier.</param>
     /// <param name="id">The value of the <c>id</c> attribute.</param>
-    public NoScript(string innerHtml = null, string hid = null, string id = null) {
+    public NoScript(string? innerHtml = null, string? hid = null, string? id = null) {
         InnerHtml = innerHtml;
         Hid = hid;
         Id = id;

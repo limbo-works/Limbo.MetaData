@@ -12,7 +12,7 @@ namespace Limbo.MetaData.Models.Twitter;
 public interface ITwitterCard {
 
     /// <summary>
-    /// Gets the type of the card - eg. <c>summary_large_image</c>.
+    /// Gets the type of the card - e.g. <c>summary_large_image</c>.
     /// </summary>
     string Card { get; }
 
@@ -24,7 +24,7 @@ public interface ITwitterCard {
     /// <summary>
     /// Gets or sets the username of the Twitter user the card should be attributed to.
     /// </summary>
-    string Creator { get; }
+    string? Creator { get; }
 
     /// <summary>
     /// Returns a list of meta tags describing the Twitter card.

@@ -15,32 +15,32 @@ public class MetaData {
     /// <summary>
     /// Gets or sets the value of <code>&lt;title&gt;</code> element. Generally this value should include both the page name and site name.
     /// </summary>
-    public string Title { get; set; }
+    public string? Title { get; set; }
 
     /// <summary>
     /// Gets or sets the canonical URL of the page.
     /// </summary>
-    public string CanonicalUrl { get; set; }
+    public string? CanonicalUrl { get; set; }
 
     /// <summary>
     /// Gets or sets the meta title of the page. Not the same as <see cref="Title"/>.
     /// </summary>
-    public string MetaTitle { get; set; }
+    public string? MetaTitle { get; set; }
 
     /// <summary>
     /// Gets or sets the meta description of the page.
     /// </summary>
-    public string MetaDescription { get; set; }
+    public string? MetaDescription { get; set; }
 
     /// <summary>
-    /// Gets or sets the <c>robots</c> value of the page - eg. <c>index,follow</c>.
+    /// Gets or sets the <c>robots</c> value of the page - e.g. <c>index,follow</c>.
     /// </summary>
-    public string Robots { get; set; }
+    public string? Robots { get; set; }
 
     /// <summary>
     /// Gets or sets an object that defines the <c>&lt;base&gt;</c> HTML element.
     /// </summary>
-    public Base Base { get; set; }
+    public Base? Base { get; set; }
 
     /// <summary>
     /// Gets or sets a collection of <c>&lt;link&gt;</c> elements.
@@ -65,12 +65,12 @@ public class MetaData {
     /// <summary>
     /// Gets or sets a collection of Open Graph properties of the page.
     /// </summary>
-    public OpenGraphProperties OpenGraph { get; set; }
+    public OpenGraphProperties? OpenGraph { get; set; }
 
     /// <summary>
     /// Gets or sets the Twitter card of the page.
     /// </summary>
-    public ITwitterCard TwitterCard { get; set; }
+    public ITwitterCard? TwitterCard { get; set; }
 
     #endregion
 
@@ -80,12 +80,12 @@ public class MetaData {
     /// Initializes a new instance with default options.
     /// </summary>
     public MetaData() {
-        Links = new List<Link>();
-        Meta = new List<Meta>();
-        Scripts = new List<Script>();
-        NoScripts = new List<NoScript>();
+        Links = [];
+        Meta = [];
+        Scripts = [];
+        NoScripts = [];
     }
 
     #endregion
-        
+
 }

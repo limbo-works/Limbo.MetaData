@@ -22,24 +22,24 @@ public class TwitterSummaryCard : ITwitterCard {
     /// <summary>
     /// Gets or sets the username of the Twitter user representing the site.
     /// </summary>
-    public string Site { get; set; }
+    public string Site { get; set; } = null!;
 
     /// <summary>
     /// Gets or sets the username of the Twitter user the card should be attributed to.
     /// </summary>
-    public string Creator { get; set; }
+    public string? Creator { get; set; }
 
     /// <summary>
     /// Gets or sets a title related to the content of the page.
     /// </summary>
-    public string Title { get; set; }
+    public string? Title { get; set; }
 
     /// <summary>
     /// Gets or sets a description that concisely summarizes the content as appropriate for presentation within a
     /// tweet. You should not re-use the title as the description or use this field to describe the general
-    /// services provided by the website. 
+    /// services provided by the website.
     /// </summary>
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     /// <summary>
     /// A URL to a unique image representing the content of the page. You should not use a generic image such as
@@ -48,12 +48,12 @@ public class TwitterSummaryCard : ITwitterCard {
     /// than 5MB in size. JPG, PNG, WEBP and GIF formats are supported. Only the first frame of an animated GIF
     /// will be used. SVG is not supported.
     /// </summary>
-    public string Image { get; set; }
+    public string? Image { get; set; }
 
     /// <summary>
     /// Gets or sets a text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters.
     /// </summary>
-    public string ImageText { get; set; }
+    public string? ImageText { get; set; }
 
     /// <summary>
     /// Returns a list of meta tags describing the Twitter card.
@@ -61,7 +61,7 @@ public class TwitterSummaryCard : ITwitterCard {
     /// <returns>An instance of <see cref="IReadOnlyList{Meta}"/>.</returns>
     public IReadOnlyList<Meta> GetMetaTags() {
 
-        List<Meta> temp = new();
+        List<Meta> temp = [];
 
         temp.Add(name: "twitter:card", content: Card, autoHid: true);
         temp.Add(name: "twitter:site", content: Site, autoHid: true);
