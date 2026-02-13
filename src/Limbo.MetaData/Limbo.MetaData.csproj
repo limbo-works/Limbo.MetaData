@@ -9,11 +9,11 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<VersionPrefix>1.0.0-alpha001</VersionPrefix>
+		<VersionPrefix>1.0.0-alpha002</VersionPrefix>
 		<VersionSuffix Condition="'$(Configuration)'=='Debug'">build$([System.DateTime]::UtcNow.ToString(`yyyyMMddHHmm`))</VersionSuffix>
 		<Company>Limbo</Company>
 		<Authors>Anders Bjerner</Authors>
-		<Copyright>Copyright © 2022</Copyright>
+		<Copyright>Copyright © $([System.DateTime]::UtcNow.ToString(`yyyy`))</Copyright>
 		<Description>Package for generating HTML meta tags from a strongly typed model.</Description>
 	</PropertyGroup>
 
