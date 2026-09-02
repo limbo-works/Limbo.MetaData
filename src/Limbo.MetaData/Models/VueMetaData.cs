@@ -33,7 +33,7 @@ public class VueMetaData : MetaData {
     public AttributeList BodyAttributes { get; set; }
 
     /// <summary>
-    /// Gets or sets an array of properties where sanitizing should be disabled. 
+    /// Gets or sets an array of properties where sanitizing should be disabled.
     /// </summary>
     /// <see>
     ///     <cref>https://github.com/nuxt/vue-meta/tree/1.x#__dangerouslydisablesanitizers-string</cref>

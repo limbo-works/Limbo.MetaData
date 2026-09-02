@@ -19,7 +19,7 @@ public interface ITwitterCard {
     /// <summary>
     /// Gets or sets the username of the Twitter user representing the site.
     /// </summary>
-    string Site { get; }
+    string? Site { get; }
 
     /// <summary>
     /// Gets or sets the username of the Twitter user the card should be attributed to.

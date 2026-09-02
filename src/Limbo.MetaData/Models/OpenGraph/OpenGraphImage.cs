@@ -11,24 +11,36 @@ public class OpenGraphImage {
     /// Gets or sets the URL of the image.
     /// </summary>
     [JsonProperty("url")]
-    public string Url { get; set; }
+#if NET10_0_OR_GREATER
+    public required string Url { get; set; }
+#else
+    public string Url { get; set; } = null!;
+#endif
 
     /// <summary>
     /// Gets or sets the width of the image.
     /// </summary>
-    [JsonProperty("width")]
+    [JsonProperty("width", DefaultValueHandling = DefaultValueHandling.Ignore)]
     public int Width { get; set; }
 
     /// <summary>
     /// Gets or sets the height of the image.
     /// </summary>
-    [JsonProperty("height")]
+    [JsonProperty("height", DefaultValueHandling = DefaultValueHandling.Ignore)]
     public int Height { get; set; }
+
+    /// <summary>
+    /// Initializes a new instance with default values. Remember to set the <see cref="Url"/> property before using the instance.
+    /// </summary>
+    public OpenGraphImage() { }
 
     /// <summary>
     /// Initializes a new instance based on the specified <paramref name="url"/>.
     /// </summary>
     /// <param name="url">The URL of the image.</param>
+#if NET10_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
     public OpenGraphImage(string url) {
         Url = url;
     }
@@ -39,6 +51,9 @@ public class OpenGraphImage {
     /// <param name="url">The URL of the image.</param>
     /// <param name="width">The width of the image.</param>
     /// <param name="height">The height of the image.</param>
+#if NET10_0_OR_GREATER
+    [System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
     public OpenGraphImage(string url, int width, int height) {
         Url = url;
         Width = width;

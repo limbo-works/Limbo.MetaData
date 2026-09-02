@@ -67,7 +67,7 @@ public class Link : Element {
     /// Gets whether this <c>link</c> element is valid.
     /// </summary>
     [JsonIgnore]
-    public virtual bool IsValid => string.IsNullOrWhiteSpace(Href) == false;
+    public virtual bool IsValid => !string.IsNullOrWhiteSpace(Href);
 
     #endregion
 

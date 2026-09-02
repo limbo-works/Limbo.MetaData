@@ -23,7 +23,7 @@ public static class MetaUtils {
     public static void AddMetaContent(JArray meta, string name, string? content, bool mandatory = false, string? hid = null, bool addHid = false) {
 
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentNullException(nameof(name));
-        if (string.IsNullOrWhiteSpace(content) && mandatory == false) return;
+        if (string.IsNullOrWhiteSpace(content) && !mandatory) return;
 
         JObject json = new() {
             { "name", name },
@@ -52,7 +52,7 @@ public static class MetaUtils {
     public static void AddMetaProperty(JArray meta, string property, string? content, bool mandatory = false, string? hid = null, bool addHid = false) {
 
         if (string.IsNullOrWhiteSpace(property)) return;
-        if (string.IsNullOrWhiteSpace(content) && mandatory == false) return;
+        if (string.IsNullOrWhiteSpace(content) && !mandatory) return;
 
         JObject json = new() {
             { "property", property },
@@ -90,7 +90,7 @@ public static class MetaUtils {
     /// <param name="href">The value for the <c>href</c> attribute of the <c>&lt;link /&gt;</c> element.</param>
     /// <param name="mandatory">If <c>true</c> the <c>&lt;link /&gt;</c> element will be appended regardless of <paramref name="href"/> being empty.</param>
     public static void AddLink(JArray links, string? rel = null, string? href = null, bool mandatory = false) {
-        if (string.IsNullOrWhiteSpace(href) && mandatory == false) return;
+        if (string.IsNullOrWhiteSpace(href) && !mandatory) return;
         links.Add(new JObject { { "rel", rel }, { "href", href ?? string.Empty } });
     }
 

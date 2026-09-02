@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+// ReSharper disable CanSimplifyDictionaryTryGetValueWithGetValueOrDefault
+
 namespace Limbo.MetaData.Models.Attributes;
 
 /// <summary>
@@ -23,7 +25,7 @@ public class AttributeList : IEnumerable<KeyValuePair<string, string>> {
     /// </summary>
     /// <param name="name">The name of the attribute.</param>
     public string? this[string name] {
-        get => _attributes.TryGetValue(name, out string value) ? value : null;
+        get => _attributes.TryGetValue(name, out string? value) ? value : null;
         set => Set(name, value);
     }
 
@@ -63,7 +65,7 @@ public class AttributeList : IEnumerable<KeyValuePair<string, string>> {
     /// <param name="name">The name of the attribute.</param>
     /// <returns>The value of the attribute of found; otherwise, <see langword="null"/>.</returns>
     public string? Get(string name) {
-        return TryGetValue(name, out string result) ? result : null;
+        return TryGetValue(name, out string? result) ? result : null;
     }
 
     /// <summary>
@@ -86,7 +88,7 @@ public class AttributeList : IEnumerable<KeyValuePair<string, string>> {
     /// </summary>
     /// <param name="name">The name of the attribute.</param>
     /// <param name="value">The value of the attribute.</param>
-    public bool TryGetValue(string name, out string value) {
+    public bool TryGetValue(string name, out string? value) {
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentNullException(nameof(name));
         return _attributes.TryGetValue(name, out value);
     }

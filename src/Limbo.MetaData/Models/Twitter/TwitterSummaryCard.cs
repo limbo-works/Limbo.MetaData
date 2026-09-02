@@ -22,7 +22,7 @@ public class TwitterSummaryCard : ITwitterCard {
     /// <summary>
     /// Gets or sets the username of the Twitter user representing the site.
     /// </summary>
-    public string Site { get; set; } = null!;
+    public string? Site { get; set; }
 
     /// <summary>
     /// Gets or sets the username of the Twitter user the card should be attributed to.
